@@ -1,0 +1,177 @@
+a{
+  text-decoration: none !important;
+}
+
+#header{
+    width: 100%;
+    height: 200px;
+    background: url("/public/image/headerBg.jpg") 0 -200px no-repeat;
+    background-size: 100% auto;
+    position: relative;
+}
+
+#logo{
+    width: 50px;
+    height:50px;
+    border-radius: 25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+nav ul{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+nav .item{
+    width: 5.6rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.active{
+    border-bottom: 3px #ff5722 solid;
+}
+
+nav .item:hover{
+    border-bottom: 3px #ff5722 solid;
+}
+
+nav .item a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.content{
+    background-color: #eee;
+    padding: 20px 0;
+}
+
+.content .elem{
+    background-color: #ffffff;
+}
+.content .tit{
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+.content .control-label{
+    font-weight: 300 !important;
+}
+
+.content .control-label,.content .form-group div{
+    padding-left: 0px !important;
+}
+.subOrReg{
+    text-align: right;
+}
+.related_recommend{
+    margin-top: 15px;
+}
+
+article{
+    padding: 20px;
+}
+article.elem{
+    margin-bottom: 15px;
+}
+.articleTit{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.introParent{
+    text-align: center;
+}
+article .intro{
+    display: inline-block;
+    margin: 0 8px;
+}
+.introNum{
+    color:#1b6d85;
+}
+.articleTitSec{
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 0;
+}
+.seeMoreBtn{
+    background-color: #ec971f !important;
+    border: none !important;
+    outline-color: white !important;
+}
+
+.seeMoreBtn a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+/*评论部分*/
+.evalBox{
+    background-color: #ffffff;
+    padding: 30px 5px !important;
+}
+.evalBox > header strong,.evalBox > header div{
+    padding: 0;
+}
+.evalBox > header div{
+    text-align: right;
+}
+
+.evalBox .psEval .top{
+    margin: 6px 0;
+}
+
+.evalBox .psEval .submit{
+    margin: 15px 0;
+    background-color: #ff5722;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+.evalBox .psEval .noEval{
+    padding-left:25px;
+    margin-top: 10px;
+}
+.evalBox .evalList{
+    text-align: left;
+}
+.evalBox .evalList li{
+    margin-top: 20px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.evalBox .evalList li:after{
+    content: '';
+    position: absolute;
+    left: 25px;
+    bottom:0;
+    right: 25px;
+    height: 1px;
+    background-color: #ddd;
+}
+.evalBox .evalList div{
+    padding: 2px 10px;
+}
+.evalBox .evalList .time{
+    text-align: right;
+}
+
+.registerMsg,.loginMsg{
+    text-align: center;
+    color: red;
+}
+
+footer{
+    text-align: center;
+}

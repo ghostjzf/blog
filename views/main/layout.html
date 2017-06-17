@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="/public/css/commen.css"/>
+    <link type="text/css" rel="stylesheet" href="/public/css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="/public/css/bootstrap.min.css"/>
+    <script src="/public/js/jquery-1.12.1.min.js"></script>
+    <script src="/public/js/index.js?v=201706101730"></script>
+</head>
+<body>
+    <header id="header">
+        <img id="logo" src="/public/image/logo.jpg">
+    </header>
+    <nav>
+
+        <ul>
+            {% if category == '' %}
+            <li class="item active"><a href="/">首页</a></li>
+            {% else %}
+            <li class="item"><a href="/">首页</a></li>
+            {% endif %}
+
+            {% for cate in categories %}
+                {% if category == cate.id %}
+                <li class="item active"><a href="/?category={{cate.id}}">{{cate.name}}</a></li>
+                {% else %}
+                <li class="item"><a href="/?category={{cate.id}}">{{cate.name}}</a></li>
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </nav>
+    <section class="content">
+        <div class="container">
+            <div class="row">
+                <div class="airticle col-lg-9">
+                    {%block content%}{%endblock%}
+                </div>
+                <div class="col-lg-3">
+                    <div class="elem submit col-lg-12">
+                        <h1 class="tit">用户信息</h1>
+                    </div>
+                    {% if userInfo._id %}
+                    <div class="elem success col-lg-12">
+                        <p class="username"><span>{{userInfo.username}}</span></p>
+                        {% if userInfo.isAdmin %}
+                        <p>
+                            <span>你好，船长</span>
+                            <a href="/admin" >进入管理</a>
+                        </p>
+                        {% else %}
+                        <p><span>您好，欢迎加入我的海贼团</span></p>
+                        {% endif %}
+                        <p><a id="cancel" href="javascript:;">退出</a> </p>
+
+                    </div>
+                    {% else %}
+                    <div class="elem submit col-lg-12">
+                        <h1 class="tit">登录</h1>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">用户名</label>
+                                <div class="col-sm-9">
+                                    <input name="username" class="form-control"  type="text" placeholder="请输入用户名...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="passWord">密码</label>
+                                <div class="col-sm-9">
+                                    <input name="password" type="password" class="form-control" id="passWord" placeholder="请输入密码...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="rePassword"></label>
+                                <div class="col-sm-9">
+                                    <button style="background-color: #ec971f;border:none;" type="button" class="loginBox btn btn-primary btn-lg btn-block">登录</button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <p class="subOrReg">还没注册？<a name="register" href="javascript:;">马上注册</a></p>
+                        <p class="loginMsg"></p>
+                    </div>
+                    <div class="elem register col-lg-12" style="display: none;">
+                        <h1 class="tit">注册</h1>
+                        <form class="form-horizontal" role="form">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">用户名</label>
+                                <div class="col-sm-9">
+                                    <input name="username" class="form-control"  type="text" placeholder="请输入用户名...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="passWord">密码</label>
+                                <div class="col-sm-9">
+                                    <input name="password" type="password" class="form-control"  placeholder="请输入密码...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label" for="rePassword">确认</label>
+                                <div class="col-sm-9">
+                                    <input name="rePassword" type="password" class="form-control" id="rePassword" placeholder="请确认密码...">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label"></label>
+                                <div class="col-sm-9">
+                                    <button style="background-color: #ec971f;border:none;" type="button" class="registerBox btn btn-primary btn-lg btn-block">注册</button>
+                                </div>
+                            </div>
+
+                        </form>
+                        <p class="subOrReg">已有账号？<a name="sbumit" href="javascript:;">马上登录</a></p>
+                        <p class="registerMsg"></p>
+                    </div>
+                    {%endif%}
+                    <div class="elem related_recommend col-lg-12">
+                        <h1 class="tit">相关推荐</h1>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer>这是一首简单的小情歌</footer>
+</body>
+</html>

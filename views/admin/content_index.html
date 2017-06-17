@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+<div class="table-responsive">
+    <ol class="breadcrumb">
+        <li><a href="/admin/content">内容首页</a></li>
+        <li class="active">内容列表</li>
+    </ol>
+    <h3>内容列表</h3>
+    <table class="table table-bordered table-hover table-striped">
+        <tr>
+            <td>ID</td>
+            <td>分类名称</td>
+            <td>标题</td>
+            <td>作者</td>
+            <td>时间</td>
+            <td>阅读数</td>
+            <td>操作</td>
+        </tr>
+        {% for content in contents %}
+        <tr>
+            <td>{{content._id.toString()}}</td>
+            <td>{{content.category.name}}</td>
+            <td>{{content.title}}</td>
+            <td>{{content.user.username}}</td>
+            <!--以分钟为单位的偏移量，东八区就是-60*8-->
+            <td>{{content.addTime|date('Y-m-d H:i:s', -60 * 8)}}</td>
+            <td>{{content.Views}}</td>
+            <td>
+                <a href="/admin/content/edit?id={{content._id.toString()}}">修改</a> |
+                <a href="/admin/content/delete?id={{content._id.toString()}}">删除</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% include 'page.html' %}
+{% endblock %}
